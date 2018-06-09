@@ -1,11 +1,11 @@
 # WebServices
 
-This project was created with Spring Boot - Spring web services with JPA and Hibernate.
+This is a Maven Spring Boot project which was built using - Spring web services with JPA and Hibernate.
 
 It provides APIs for a user to register, get audio contents and cancel registeration. The authentication for apis are
 done using firebase token verification.
 
-#API Documentation
+# API Documentation
 
 Check out my project 'Documentation' which lists in detail all the APIs provided by WebServices
 
