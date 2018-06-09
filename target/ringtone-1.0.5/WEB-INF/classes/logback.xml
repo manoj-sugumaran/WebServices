@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>../ringtone.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d [%t] %-5p [%30.30C:%4L] - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	        <!-- rollover daily -->
+	        <fileNamePattern>
+	            D:/30SEC/ringtone.%d{yyyy-MM-dd}.%i.log
+	        </fileNamePattern>
+	        <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+	            <maxFileSize>100MB</maxFileSize>
+	        </timeBasedFileNamingAndTriggeringPolicy>
+    	</rollingPolicy>
+    </appender>
+    
+     <appender name="TLOGS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>../tlog.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d [%t] %-5p [%30.30C:%4L] - %m%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+	        <!-- rollover daily -->
+	        <fileNamePattern>
+	            D:/30SEC/tlog.%d{yyyy-MM-dd}.%i.log
+	        </fileNamePattern>
+	        <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+	            <maxFileSize>100MB</maxFileSize>
+	        </timeBasedFileNamingAndTriggeringPolicy>
+    	</rollingPolicy>
+    </appender>
+     
+    <root level="DEBUG">
+        <appender-ref ref="fileAppender" />
+    </root>
+    
+    <logger name="tlogs" level="info" additivity="false">
+	    <appender-ref ref="TLOGS" />
+	</logger>
+	
+</configuration>
